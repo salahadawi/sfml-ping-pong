@@ -8,7 +8,9 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-set(SOURCES src/main.cpp)
+file(GLOB source_files src/*.cpp)
+
+set(SOURCES ${source_files})
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE includes)
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE sfml-graphics)
