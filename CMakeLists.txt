@@ -12,7 +12,6 @@ file(GLOB source_files src/*.cpp)
 
 set(SOURCES ${source_files})
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCES})
-target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE includes)
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE sfml-graphics)
 target_compile_features(${CMAKE_PROJECT_NAME} PRIVATE cxx_std_17)
 if (WIN32 AND BUILD_SHARED_LIBS)
